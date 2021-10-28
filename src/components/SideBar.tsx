@@ -7,11 +7,11 @@ import { Button } from '../components/Button';
 import '../styles/sidebar.scss';
 
 interface SidebarProps {
+  selectedGenreId: number | undefined;
   onSelectGenre: (genreId: number) => void;
 }
 
-export function SideBar({ onSelectGenre }: SidebarProps) {
-  const [selectedGenreId, setSelectedGenreId] = useState<number | undefined>(undefined);  
+export function SideBar({ onSelectGenre, selectedGenreId }: SidebarProps) {
   const [genres, setGenres] = useState<Genre[]>([]);
   
   useEffect(() => {
@@ -22,7 +22,6 @@ export function SideBar({ onSelectGenre }: SidebarProps) {
   }, []);
 
   function handleSelectedGenre(selectedGenreId: number) {
-    setSelectedGenreId(selectedGenreId);
     onSelectGenre(selectedGenreId);
   }
   
