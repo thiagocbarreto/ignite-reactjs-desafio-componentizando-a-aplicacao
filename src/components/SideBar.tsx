@@ -4,6 +4,8 @@ import { Genre } from '../models/Genre';
 import { api } from '../services/api';
 import { Button } from '../components/Button';
 
+import '../styles/sidebar.scss';
+
 interface SidebarProps {
   onSelectGenre: (genreId: number) => void;
 }
